@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, TouchableOpacity, Text } from 'react-native';
 import styled from 'styled-components/native';
 import CreateTodo from '../components/CreateTodo';
 import Todo from '../components/Todo';
@@ -12,6 +12,17 @@ const Container = styled.View`
 
 const TodosList = styled.View`
   flex: 1;
+`;
+
+const Button = styled.TouchableOpacity`
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TextMarkiz = styled.Text`
+  color: #ffffff;
+  font-size: 24px;
 `;
 
 const MainPage = ({ navigation }:any) => {
@@ -28,6 +39,9 @@ const MainPage = ({ navigation }:any) => {
           )}
         />
       </TodosList>
+      <Button onPress={() => navigation.navigate('PhoneForm')}>
+        <TextMarkiz>Phone verification</TextMarkiz>
+      </Button>
     </Container>
   );
 }
